@@ -1,0 +1,18 @@
+import numpy as np
+from typing import Dict
+
+def vector_products(a: np.ndarray, b: np.ndarray) -> Dict[str, np.ndarray]:
+    """
+    Computes dot and cross products for batches of 3D vectors.
+    
+    Args:
+        a: Shape (N, 3)
+        b: Shape (N, 3)
+        
+    Returns:
+        Dict with "dot" (N,) and "cross" (N, 3)
+    """
+    ans={}
+    ans["dot"]=np.sum(a*b,axis=1)
+    ans["cross"]=np.cross(a,b)
+    return ans
